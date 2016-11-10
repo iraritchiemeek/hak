@@ -72,15 +72,37 @@ main {
 	width: 100%;
 }
 
+.color-strip {
+	top: 0;
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	&__strip {
+		float: left;
+		height: 100%;
+		width: 33.3333%;
+		&--pink {
+			background-color: #8C475C;
+		}
+		&--purple {
+			background-color: #C897B4;
+		}
+		&--blue {
+			background-color: #DBC0CF;
+		}
+	}
+}
+
 .nav-bar {
 	height: 100%;
 	width: 100%;
 	margin: 0 0 0 50px;
 
 	&__item {
+		cursor: pointer;
 		height: 100%;
 		float: left;
-		width: 200px;
+		width: 150px;
 		line-height: 150px;
 		font-size: 2em;
 		text-align: center;
@@ -101,15 +123,38 @@ main {
 	width: 400px;
 	font-size: 15em;
 }
- 
-.img {
-	&--top-left {
+
+.gallery {
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	&__img {
+		position: absolute;
 		max-height: 600px;
 		max-width: 600px;
-		position: absolute;
-		top: 50px;
-		left: 50px;
+	}
+	&__nav {
+		display: inline-block;
+		top: 100%;
+		// width: 40%;
+		// height: 10%;
+		// margin: 0 0 0 10px;
+		position: relative;
+		// margin: 
+	}
+	&__arrow {
+		cursor: pointer;
+		opacity: 0.5;
+		display: inline-block;
+		font-size: 5em;
+		// color: white;
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
+ 
 
 
