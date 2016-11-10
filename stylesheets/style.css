@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #FAFAFA;
+  font-family: 'Futura';
+  margin: 0 0 0 0;
+  overflow: hidden; }
+
+header {
+  top: 0px;
+  left: 100%;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  height: 150px;
+  width: 100%;
+  transform: rotate(90deg);
+  transform-origin: left top;
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Chrome, Safari, Opera */ }
+
+main {
+  padding: 100px 0 0 0;
+  height: 100%;
+  width: 100%; }
+
+.nav-bar {
+  height: 100%;
+  width: 100%;
+  margin: 0 0 0 50px; }
+  .nav-bar__item {
+    height: 100%;
+    float: left;
+    width: 200px;
+    line-height: 150px;
+    font-size: 2em;
+    text-align: center;
+    transition-duration: 1s; }
+    .nav-bar__item:hover {
+      background-color: rgba(0, 0, 0, 0.2); }
+
+.title {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  font-size: 15em; }
+
+.img--top-left {
+  max-height: 600px;
+  max-width: 600px;
+  position: absolute;
+  top: 50px;
+  left: 50px; }
+
+/*# sourceMappingURL=style.css.map */
