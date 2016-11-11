@@ -10,7 +10,6 @@ $(document).ready(function () {
 		} else {
 			index += 1
 		}
-		console.log(images.length)
 		if (index >= images.length -1) {
 			index = 0
 		} else if (index <= 0) {

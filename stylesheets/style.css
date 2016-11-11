@@ -1,4 +1,7 @@
 html, body {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
   height: 100%;
   width: 100%;
   background-color: #FAFAFA;
@@ -22,9 +25,29 @@ header {
   /* Chrome, Safari, Opera */ }
 
 main {
+  user-select: none;
   padding: 100px 0 0 0;
   height: 100%;
   width: 100%; }
+
+.inner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clear: both; }
+  @media only screen and (max-width: 64em) {
+    .inner-container {
+      width: 950px;
+      height: 1250px; } }
+  @media only screen and (min-width: 64em) and (max-width: 90em) {
+    .inner-container {
+      width: 960px;
+      height: 470px; } }
+  @media only screen and (min-width: 90em) {
+    .inner-container {
+      width: 1440px;
+      height: 720px; } }
 
 .color-strip {
   top: 0;
@@ -71,18 +94,16 @@ main {
   font-size: 15em; }
 
 .gallery {
-  width: 600px;
-  height: 600px;
-  position: absolute;
-  top: 50px;
-  left: 50px; }
+  width: 60%;
+  height: 100%;
+  position: absolute; }
   .gallery__img {
     position: absolute;
     max-height: 600px;
     max-width: 600px; }
   .gallery__nav {
     display: inline-block;
-    top: 100%;
+    top: 80%;
     position: relative; }
   .gallery__arrow {
     cursor: pointer;

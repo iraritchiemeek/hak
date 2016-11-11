@@ -44,6 +44,9 @@ $xlarge-breakpoint: em(1920) !default;
 
 
 html, body {
+	user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 	height: 100%;
 	width: 100%;
 	background-color: #FAFAFA;
@@ -67,9 +70,28 @@ header {
 }
 
 main {
+
+	user-select: none;
 	padding: 100px 0 0 0;
 	height: 100%;
 	width: 100%;
+}
+
+.inner-container {
+	@include center;
+	clear: both;
+	@include respond-to(handhelds) {
+		width: 950px;
+		height: 1250px;
+	}
+	@include respond-to(medium-screens) {
+		width: 960px;
+		height: 470px;
+	}
+	@include respond-to(wide-screens) {
+		width: 1440px;
+		height: 720px;
+	}	
 }
 
 .color-strip {
@@ -125,11 +147,9 @@ main {
 }
 
 .gallery {
-	width: 600px;
-	height: 600px;
+	width: 60%;
+	height: 100%;
 	position: absolute;
-	top: 50px;
-	left: 50px;
 	&__img {
 		position: absolute;
 		max-height: 600px;
@@ -137,12 +157,8 @@ main {
 	}
 	&__nav {
 		display: inline-block;
-		top: 100%;
-		// width: 40%;
-		// height: 10%;
-		// margin: 0 0 0 10px;
+		top: 80%;
 		position: relative;
-		// margin: 
 	}
 	&__arrow {
 		cursor: pointer;
