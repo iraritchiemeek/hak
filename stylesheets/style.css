@@ -1,3 +1,13 @@
+@-webkit-keyframes mymove {
+  0% {
+    background-color: rgba(219, 191, 207, 0.5); }
+  100% {
+    background-color: rgba(219, 191, 207, 0.2); } }
+@keyframes mymove {
+  0% {
+    background-color: rgba(219, 191, 207, 0.5); }
+  100% {
+    background-color: rgba(219, 191, 207, 0.2); } }
 html, body {
   user-select: none;
   -ms-user-select: none;
@@ -39,7 +49,7 @@ main {
   @media only screen and (max-width: 64em) {
     .inner-container {
       width: 950px;
-      height: 1250px; } }
+      height: 100%; } }
   @media only screen and (min-width: 64em) and (max-width: 90em) {
     .inner-container {
       width: 960px;
@@ -58,11 +68,11 @@ main {
     float: left;
     height: 100%;
     width: 33.3333%; }
-    .color-strip__strip--pink {
+    .color-strip__strip--pink1 {
       background-color: #8C475C; }
-    .color-strip__strip--purple {
+    .color-strip__strip--pink2 {
       background-color: #C897B4; }
-    .color-strip__strip--blue {
+    .color-strip__strip--pink3 {
       background-color: #DBC0CF; }
 
 .nav-bar {
@@ -79,7 +89,9 @@ main {
     text-align: center;
     transition-duration: 1s; }
     .nav-bar__item:hover {
-      background-color: rgba(0, 0, 0, 0.2); }
+      background-color: rgba(219, 191, 207, 0.5); }
+    .nav-bar__item--active {
+      animation: mymove 2s ease-in-out 0s infinite alternate-reverse; }
 
 .title {
   z-index: 2;
@@ -99,8 +111,8 @@ main {
   position: absolute; }
   .gallery__img {
     position: absolute;
-    max-height: 600px;
-    max-width: 600px; }
+    max-height: 60%;
+    max-width: 40%; }
   .gallery__nav {
     display: inline-block;
     top: 80%;

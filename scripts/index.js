@@ -18,4 +18,11 @@ $(document).ready(function () {
 		$('.gallery__img').attr("src", image_path + images[index])
 	})
 
+	$('.nav-bar__item').click(function() {
+		$(this).toggleClass($(this)[0].classList[0] + '--active')
+	})
+
+	// function showSection() {
+	// 	if ('')
+	// }
 })
