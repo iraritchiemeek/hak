@@ -91,6 +91,10 @@ main {
 	width: 100%;
 }
 
+div[class*="--hide"] { 
+	display: none;
+}
+
 .inner-container {
 	@include center;
 	clear: both;
@@ -198,5 +202,36 @@ main {
 	}
 }
  
+.music {
+	@include center;
+	border: 1px solid rgba(86%, 75%, 81%, 0.6%);
+	height: 100%;
+	width: 35%;
+	&__wrapper {
+		width: 95%;
+		float: right;
+		height: 100%;
+	}
+	&__header {
+		height: 20%;
+		width: 100%;
+		border-bottom: 1px solid rgba(86%, 75%, 81%, 0.6%);
+	}
+	&__track-list {
+		height: 80%;
+		width: 100%;
+		overflow: scroll;
+	}
+	&__track {
+		float: right;
+		border-bottom: 1px solid rgba(86%, 75%, 81%, 0.6%);
+		width: 90%;
+		height: 10%;
+	}
+}
+
+
+
+
 
 
