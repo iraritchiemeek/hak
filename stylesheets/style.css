@@ -1,9 +1,12 @@
-@-webkit-keyframes mymove {
+@font-face {
+  font-family: 'Futura Light';
+  src: url("../fonts/Futura (Light).ttf"); }
+@-webkit-keyframes pulseBg {
   0% {
     background-color: rgba(219, 191, 207, 0.5); }
   100% {
     background-color: rgba(219, 191, 207, 0.2); } }
-@keyframes mymove {
+@keyframes pulseBg {
   0% {
     background-color: rgba(219, 191, 207, 0.5); }
   100% {
@@ -15,7 +18,7 @@ html, body {
   height: 100%;
   width: 100%;
   background-color: #FAFAFA;
-  font-family: 'Futura';
+  font-family: "Futura";
   margin: 0 0 0 0;
   overflow: hidden; }
 
@@ -35,7 +38,6 @@ header {
   /* Chrome, Safari, Opera */ }
 
 main {
-  animation: mymove 2s ease-in-out 0s infinite alternate-reverse;
   user-select: none;
   height: 100%;
   width: 100%; }
@@ -91,7 +93,7 @@ main {
     .nav-bar__item:hover {
       background-color: rgba(219, 191, 207, 0.5); }
     .nav-bar__item--active {
-      animation: mymove 2s ease-in-out 0s infinite alternate-reverse; }
+      animation: pulseBg 2s ease-in-out 0s infinite alternate-reverse; }
 
 .title {
   position: absolute;
@@ -108,19 +110,24 @@ main {
     font-size: 15em; }
 
 .gallery {
-  width: 60%;
+  width: 100%;
   height: 100%;
   position: absolute; }
   .gallery__img {
     position: absolute;
-    max-height: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    max-height: 100%;
     max-width: 40%; }
   .gallery__nav {
+    float: left;
     white-space: nowrap;
     display: inline-block;
-    top: 80%;
-    position: absolute; }
+    position: relative; }
   .gallery__arrow {
+    font-family: 'Futura Light';
     cursor: pointer;
     opacity: 0.5;
     display: inline-block;
