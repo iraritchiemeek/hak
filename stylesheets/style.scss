@@ -102,11 +102,12 @@ main {
 	padding: 0;
 }
 
-div[class*="--hide"] { 
+.hide { 
 	display: none;
 }
 
 .inner-container {
+	transition-duration: 1s;
 	@include center;
 	clear: both;
 	@include respond-to(handhelds) {
@@ -206,7 +207,6 @@ div[class*="--hide"] {
 		opacity: 0.5;
 		display: inline-block;
 		font-size: 5em;
-		// color: white;
 		&:hover {
 			opacity: 1;
 		}

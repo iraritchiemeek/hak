@@ -4,6 +4,8 @@ $(document).ready(function () {
 	var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg']
 	var index = 0
 
+	displaySection()
+
 	$('.gallery__arrow').click(function () {
 		if ($(this)[0].classList[1] ==  'gallery__arrow--back') {
 			if (index <= 0) {
@@ -21,11 +23,34 @@ $(document).ready(function () {
 		$('.gallery__img').attr("src", image_path + images[index])
 	})
 
-	$('.nav-bar__item').click(function() {
+	$('.nav-bar__item').click(function(e) {
 		$(this).toggleClass($(this)[0].classList[0] + '--active')
+		hideSections()
+		displaySection(e.currentTarget.textContent)
 	})
 
-	// function showSection() {
-	// 	if ('')
-	// }
+	function displaySection(menuText) {
+		switch (menuText) {
+		  case 'Music':
+		    showSection($('.music'))
+		    break;
+		  case 'Photos':
+		    showSection($('.gallery'))
+		    //Statements executed when the result of expression matches value2
+		    break;
+		  default:
+			  hideSections()
+			  showSection($('.title'))
+		    //Statements executed when none of the values match the value of the expression
+		    break;
+		}
+	}
+
+	function hideSections() {
+		$('.section').addClass('hide')
+	}
+
+	function showSection($section) {
+		$section.removeClass('hide')
+	}
 })

@@ -46,10 +46,11 @@ main {
   margin: 0;
   padding: 0; }
 
-div[class*="--hide"] {
+.hide {
   display: none; }
 
 .inner-container {
+  transition-duration: 1s;
   position: absolute;
   top: 50%;
   left: 50%;
