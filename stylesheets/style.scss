@@ -214,8 +214,16 @@ div[class*="--hide"] {
 	}
 	&__header {
 		height: 20%;
-		width: 100%;
+		width: calc(100% -10px); // Minus Padding
+		padding: 10px 10px 10px 10px;
 		border-bottom: 1px solid rgba(86%, 75%, 81%, 0.6%);
+	}
+	&__album-art {
+		background-size: cover;
+		background-image: url('../imgs/album-art.jpg');
+		float: left;
+		width: 30%;
+		padding-bottom: 30%;
 	}
 	&__track-list {
 		height: 80%;
