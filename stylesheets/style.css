@@ -186,6 +186,7 @@ div[class*="--hide"] {
     width: 100%;
     overflow: scroll; }
   .music__track {
+    cursor: pointer;
     clear: both;
     width: 100%;
     height: 10%;
@@ -199,6 +200,7 @@ div[class*="--hide"] {
       height: 100%;
       border-bottom: 1px solid rgba(219, 191, 207, 0.6); }
   .music__track-name {
+    transition-duration: 1s;
     display: inline-block;
     position: relative;
     float: left;
@@ -214,6 +216,8 @@ div[class*="--hide"] {
     @media only screen and (min-width: 64em) and (max-width: 90em) {
       .music__track-name {
         font-size: 0.9em; } }
+    .music__track-name:hover {
+      background-color: rgba(219, 191, 207, 0.4); }
   .music__track-number {
     display: inline-block;
     clear: both;

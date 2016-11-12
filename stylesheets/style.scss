@@ -260,6 +260,7 @@ div[class*="--hide"] {
 		overflow: scroll;
 	}
 	&__track {
+		cursor: pointer;
 		clear: both;
 		width: 100%;
 		height: 10%;
@@ -275,6 +276,7 @@ div[class*="--hide"] {
 		}
 	}
 	&__track-name {
+		transition-duration: 1s;
 		display: inline-block;
 		position: relative;
 		float: left;
@@ -288,6 +290,9 @@ div[class*="--hide"] {
 		}
 		@include respond-to(medium-screens) {
 			font-size: 0.9em;
+		}
+		&:hover {
+			background-color:rgba(86%, 75%, 81%, 0.4%);
 		}
 	}
 	&__track-number {
