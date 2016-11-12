@@ -24,7 +24,8 @@ $(document).ready(function () {
 	})
 
 	$('.nav-bar__item').click(function(e) {
-		$(this).toggleClass($(this)[0].classList[0] + '--active')
+		$('.nav-bar__item').removeClass('nav-bar__item--active')
+		$(this).addClass($(this)[0].classList[0] + '--active')
 		hideSections()
 		displaySection(e.currentTarget.textContent)
 	})
@@ -36,12 +37,10 @@ $(document).ready(function () {
 		    break;
 		  case 'Photos':
 		    showSection($('.gallery'))
-		    //Statements executed when the result of expression matches value2
 		    break;
 		  default:
-			  hideSections()
-			  showSection($('.title'))
-		    //Statements executed when none of the values match the value of the expression
+			hideSections()
+			showSection($('.title'))
 		    break;
 		}
 	}
