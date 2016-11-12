@@ -42,6 +42,10 @@ main {
   height: 100%;
   width: 100%; }
 
+* {
+  margin: 0;
+  padding: 0; }
+
 div[class*="--hide"] {
   display: none; }
 
@@ -145,30 +149,83 @@ div[class*="--hide"] {
   transform: translate(-50%, -50%);
   border: 1px solid rgba(219, 191, 207, 0.6);
   height: 100%;
-  width: 35%; }
+  width: 35%;
+  font-family: 'Helvetica Neue';
+  font-weight: 200; }
   .music__wrapper {
     width: 95%;
     float: right;
     height: 100%; }
   .music__header {
     height: 20%;
-    width: calc(100% -10px);
-    padding: 10px 10px 10px 10px;
+    width: 100%;
     border-bottom: 1px solid rgba(219, 191, 207, 0.6); }
   .music__album-art {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background-size: cover;
+    width: 25%;
+    padding-bottom: 25%;
+    position: relative;
     background-image: url("../imgs/album-art.jpg");
+    float: left; }
+  .music__album-info {
+    position: relative;
+    list-style: none;
     float: left;
-    width: 30%;
-    padding-bottom: 30%; }
+    margin: 10px 0 0 10px;
+    display: inline-block; }
+  .music__album-title {
+    font-size: 1.8em; }
+  .music__album-artist {
+    font-size: 1.2em;
+    color: #8C475C; }
   .music__track-list {
     height: 80%;
     width: 100%;
     overflow: scroll; }
   .music__track {
-    float: right;
-    border-bottom: 1px solid rgba(219, 191, 207, 0.6);
+    clear: both;
+    width: 100%;
+    height: 10%;
+    position: relative; }
+    .music__track:before {
+      position: absolute;
+      right: 0;
+      content: "";
+      display: inline-block;
+      width: 90%;
+      height: 100%;
+      border-bottom: 1px solid rgba(219, 191, 207, 0.6); }
+  .music__track-name {
+    display: inline-block;
+    position: relative;
+    float: left;
     width: 90%;
-    height: 10%; }
+    height: 100%;
+    font-size: 1.2em; }
+    .music__track-name span {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 0 0 5px;
+      font-size: 1.4em; }
+    @media only screen and (min-width: 64em) and (max-width: 90em) {
+      .music__track-name {
+        font-size: 0.9em; } }
+  .music__track-number {
+    display: inline-block;
+    clear: both;
+    height: 100%;
+    width: 10%;
+    float: left; }
+    .music__track-number span {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #dbbfcf;
+      margin: 0 0 0 5px;
+      font-size: 1.4em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -49,6 +49,12 @@ $xlarge-breakpoint: em(1920) !default;
 	transform: translate(-50%, -50%);
 }
 
+@mixin center-vertical {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 //Copy / Paste for responsive styles
 
 // @include respond-to(handhelds) {
@@ -89,6 +95,11 @@ main {
 	user-select: none;
 	height: 100%;
 	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
 }
 
 div[class*="--hide"] { 
@@ -207,6 +218,8 @@ div[class*="--hide"] {
 	border: 1px solid rgba(86%, 75%, 81%, 0.6%);
 	height: 100%;
 	width: 35%;
+	font-family: 'Helvetica Neue';
+	font-weight: 200;
 	&__wrapper {
 		width: 95%;
 		float: right;
@@ -214,16 +227,32 @@ div[class*="--hide"] {
 	}
 	&__header {
 		height: 20%;
-		width: calc(100% -10px); // Minus Padding
-		padding: 10px 10px 10px 10px;
+		width: 100%; // Minus Padding
+		// padding: 10px 10px 10px 10px;
 		border-bottom: 1px solid rgba(86%, 75%, 81%, 0.6%);
 	}
 	&__album-art {
+		@include center-vertical;
 		background-size: cover;
+		width: 25%;
+		padding-bottom: 25%;
+		position: relative;
 		background-image: url('../imgs/album-art.jpg');
 		float: left;
-		width: 30%;
-		padding-bottom: 30%;
+	}
+	&__album-info {
+		position: relative;
+		list-style: none;
+		float: left;
+		margin: 10px 0 0 10px;
+		display: inline-block;
+	}
+	&__album-title {
+		font-size: 1.8em;
+	}
+	&__album-artist {
+		font-size: 1.2em;
+		color: #8C475C;
 	}
 	&__track-list {
 		height: 80%;
@@ -231,10 +260,48 @@ div[class*="--hide"] {
 		overflow: scroll;
 	}
 	&__track {
-		float: right;
-		border-bottom: 1px solid rgba(86%, 75%, 81%, 0.6%);
-		width: 90%;
+		clear: both;
+		width: 100%;
 		height: 10%;
+		position: relative;
+		&:before {
+			position: absolute;
+			right: 0;
+			content: "";
+			display: inline-block;
+			width: 90%;
+			height: 100%;
+			border-bottom: 1px solid rgba(86%, 75%, 81%, 0.6%);
+		}
+	}
+	&__track-name {
+		display: inline-block;
+		position: relative;
+		float: left;
+		width: 90%;
+		height: 100%;
+		font-size: 1.2em;
+		span {
+			@include center-vertical;
+			margin: 0 0 0 5px;
+			font-size: 1.4em;
+		}
+		@include respond-to(medium-screens) {
+			font-size: 0.9em;
+		}
+	}
+	&__track-number {
+		display: inline-block;
+		clear: both;
+		height: 100%;
+		width: 10%;
+		float: left;
+		span {
+			@include center-vertical;
+			color: rgba(86%, 75%, 81%, 1);
+			margin: 0 0 0 5px;
+			font-size: 1.4em;
+		}
 	}
 }
 
