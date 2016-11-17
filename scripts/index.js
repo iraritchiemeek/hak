@@ -1,10 +1,11 @@
 $(document).ready(function () {
 	
 	var image_path = '../imgs/'
-	var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg']
+	var images = ['1.jpg', '2.jpg', '3.jpg']
 	var index = 0
 
 	displaySection()
+	changeImageCount(index, images.length)
 
 	$('.gallery__arrow').click(function () {
 		if ($(this)[0].classList[1] ==  'gallery__arrow--back') {
@@ -21,6 +22,7 @@ $(document).ready(function () {
 			}
 		}
 		$('.gallery__img').attr("src", image_path + images[index])
+		changeImageCount(index, images.length)
 	})
 
 	$('.nav-bar__item').click(function(e) {
@@ -43,6 +45,10 @@ $(document).ready(function () {
 			showSection($('.title'))
 		    break;
 		}
+	}
+
+	function changeImageCount(index, image_count) {
+		$('.gallery__img-count > span').text(index + 1 + '/' + image_count)
 	}
 
 	function hideSections() {

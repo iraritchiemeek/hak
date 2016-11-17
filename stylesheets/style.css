@@ -122,19 +122,23 @@ main {
   height: 100%;
   position: absolute; }
   .gallery__img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
+    float: left;
     max-height: 100%;
-    max-width: 40%; }
+    max-width: 100%; }
   .gallery__nav {
+    margin: 0 20px 0 0;
+    height: 100%;
+    width: 10%;
     float: left;
     white-space: nowrap;
     display: inline-block;
     position: relative; }
+  .gallery__arrow-wrapper {
+    position: absolute;
+    bottom: 0;
+    height: 10%; }
   .gallery__arrow {
+    position: relative;
     font-family: 'Futura Light';
     cursor: pointer;
     opacity: 0.5;
@@ -142,6 +146,19 @@ main {
     font-size: 5em; }
     .gallery__arrow:hover {
       opacity: 1; }
+  .gallery__img-count {
+    height: 10%;
+    position: relative;
+    top: 80%;
+    width: 100%; }
+    .gallery__img-count span {
+      bottom: 0;
+      position: absolute;
+      float: left;
+      font-family: 'Futura Light';
+      display: inline-block;
+      text-align: center;
+      font-size: 2em; }
 
 .music {
   position: absolute;

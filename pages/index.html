@@ -9,7 +9,7 @@
 <body>
 	<header>
 		<div class="nav-bar">
-			<div class="nav-bar__item nav-bar__item--active">Music</div>
+			<div class="nav-bar__item">Music</div>
 			<div class="nav-bar__item">Photos</div>
 			<div class="nav-bar__item">Videos</div>
 			<div class="nav-bar__item">About</div>
@@ -26,11 +26,16 @@
 				<span>hak</span>
 			</div>
 			<div class="section gallery">
-				<img class="gallery__img" src="../imgs/1.jpg">
 				<div class="gallery__nav">
-					<div class="gallery__arrow gallery__arrow--back"><</div>
-					<div class="gallery__arrow gallery__arrow--forward">></div>
+					<div class="gallery__img-count">
+						<span></span>
+					</div>
+					<div class="gallery__arrow-wrapper">
+						<div class="gallery__arrow gallery__arrow--back"><</div>
+						<div class="gallery__arrow gallery__arrow--forward">></div>
+					</div>
 				</div>
+				<img class="gallery__img" src="../imgs/1.jpg">
 			</div>
 			<div class="section music">
 				<div class="music__wrapper">
