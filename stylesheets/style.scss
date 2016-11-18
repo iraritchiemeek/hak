@@ -194,6 +194,8 @@ main {
 	height: 100%;
 	position: absolute;
 	&__img {
+		border-left: 10px solid #DBC0CF;
+		border-bottom: 10px solid #C897B4;
 		float: left;
 		// @include center;
 		// position: absolute;
@@ -248,6 +250,8 @@ main {
 .music {
 	@include center;
 	border: 1px solid rgba(86%, 75%, 81%, 0.6%);
+	border-left: 10px solid #DBC0CF;
+	border-bottom: 10px solid #C897B4;
 	height: 100%;
 	width: 35%;
 	font-family: 'Helvetica Neue';
