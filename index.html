@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="hakApp">
+<head>
+	<title>Hak</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+	<script src="scripts/angular.js"></script>
+</head>
+<body>
+	<header>
+		<div class="nav-bar">
+			<div class="nav-bar__item">Music</div>
+			<div class="nav-bar__item">Photos</div>
+			<div class="nav-bar__item">Videos</div>
+			<div class="nav-bar__item">About</div>
+		</div>
+	</header>
+	<div class="color-strip">
+		<div class="color-strip__strip color-strip__strip--pink1"></div>
+		<div class="color-strip__strip color-strip__strip--pink2"></div>
+		<div class="color-strip__strip color-strip__strip--pink3"></div>
+	</div>
+	<div ng-controller="mainController" ng-view></div>
+</html>
