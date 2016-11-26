@@ -4,7 +4,6 @@ $(document).ready(function () {
 	var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg']
 	var index = 0
 
-	displaySection()
 	changeImageCount(index, images.length)
 
 	$('.gallery__arrow').click(function () {
@@ -32,30 +31,7 @@ $(document).ready(function () {
 		displaySection(e.currentTarget.textContent)
 	})
 
-	function displaySection(menuText) {
-		switch (menuText) {
-		  case 'Music':
-		    showSection($('.music'))
-		    break;
-		  case 'Photos':
-		    showSection($('.gallery'))
-		    break;
-		  default:
-			hideSections()
-			showSection($('.title'))
-		    break;
-		}
-	}
-
 	function changeImageCount(index, image_count) {
 		$('.gallery__img-count > span').text(index + 1 + '/' + image_count)
-	}
-
-	function hideSections() {
-		$('.section').addClass('hide')
-	}
-
-	function showSection($section) {
-		$section.removeClass('hide')
 	}
 })

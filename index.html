@@ -7,13 +7,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
 	<script src="scripts/angular.js"></script>
 </head>
-<body>
+<body ng-controller="mainController">
 	<header>
 		<div class="nav-bar">
-			<div class="nav-bar__item">Music</div>
-			<div class="nav-bar__item">Photos</div>
-			<div class="nav-bar__item">Videos</div>
-			<div class="nav-bar__item">About</div>
+			<div class="nav-bar__item" ng-click="go('/music')">Music</div>
+			<div class="nav-bar__item" ng-click="go('/photos')">Photos</div>
+			<div class="nav-bar__item" ng-click="go('/videos')">Videos</div>
+			<div class="nav-bar__item" ng-click="go('/about')">About</div>
 		</div>
 	</header>
 	<div class="color-strip">
