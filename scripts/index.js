@@ -27,8 +27,6 @@ $(document).ready(function () {
 	$('.nav-bar__item').click(function(e) {
 		$('.nav-bar__item').removeClass('nav-bar__item--active')
 		$(this).addClass($(this)[0].classList[0] + '--active')
-		hideSections()
-		displaySection(e.currentTarget.textContent)
 	})
 
 	function changeImageCount(index, image_count) {
