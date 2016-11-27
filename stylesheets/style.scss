@@ -14,6 +14,10 @@ $medium-breakpoint:  em(1264) !default;
 $large-breakpoint:  em(1440) !default;
 $xlarge-breakpoint: em(1920) !default;
 
+$pink1:#8C475C;
+$pink2:#C897B4;
+$pink3:#DBC0CF;
+
 @mixin respond-to($media) {
   @if $media == handhelds {
     @media only screen and (max-width: $small-breakpoint) { @content; }
@@ -31,9 +35,10 @@ $xlarge-breakpoint: em(1920) !default;
     100%   {background-color: rgba(86%, 75%, 81%, 0.2%); }
 }
 
-@keyframes pulseBg {
-    0% {background-color: rgba(86%, 75%, 81%, 0.5%);}
-    100%   {background-color: rgba(86%, 75%, 81%, 0.2%); }
+@keyframes pulseText {
+    0% {color: $pink1;}
+    50% {color: $pink2;}
+    100% {color: $pink3;}
 }
 
 @mixin flex-wrapper {
@@ -59,6 +64,11 @@ $xlarge-breakpoint: em(1920) !default;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
+}
+
+@mixin pink-border {
+	border-left: 10px solid #DBC0CF;
+	border-bottom: 10px solid #C897B4;
 }
 
 //Copy / Paste for responsive styles
@@ -176,16 +186,24 @@ main {
 }
 
 .title {
-	@include center;
-	height: 300px;
-	width: 400px;
-	position: absolute;
-	span {
+	&--center {
+		@include center;
+		height: 300px;
+		width: 400px;
 		position: absolute;
-		// color: #FAFAFA;
-		z-index: 2;
-		text-align: center;
-		font-size: 15em;	
+		span {
+			position: absolute;
+			// color: #FAFAFA;
+			z-index: 2;
+			text-align: center;
+			font-size: 15em;	
+		}
+	}
+	&--top-left {
+		animation: pulseText 5s ease-in-out 0s infinite alternate-reverse;
+		margin: 10px 0 0 10px;
+		font-size: 3em;
+		color: #8C475C;
 	}
 }
 
@@ -194,9 +212,8 @@ main {
 	height: 100%;
 	position: absolute;
 	&__img {
+		@include pink-border;
 		// position: relative;
-		border-left: 10px solid #DBC0CF;
-		border-bottom: 10px solid #C897B4;
 		float: left;
 		// @include center;
 		// position: absolute;
@@ -251,8 +268,7 @@ main {
 .music {
 	@include center;
 	border: 1px solid rgba(86%, 75%, 81%, 0.6%);
-	border-left: 10px solid #DBC0CF;
-	border-bottom: 10px solid #C897B4;
+	@include pink-border;
 	height: 100%;
 	width: 35%;
 	font-family: 'Helvetica Neue';
@@ -347,8 +363,23 @@ main {
 	}
 }
 
-
-
+.about {
+	@include center-horizontal;
+	width: 55%;
+	height: 100%;
+	&__copy {
+		@include center-vertical;
+		padding: 0 0 0 5px;
+		@include pink-border;
+		font-size: 1.2em;
+		display: inline-block;
+		&--emphasis {
+			display: inline-block;
+			color: #8C475C;
+			font-size: 1.3em;
+		}
+	}
+}
 
 
 
