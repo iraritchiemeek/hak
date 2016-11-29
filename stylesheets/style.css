@@ -288,11 +288,14 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 0 0 0 5px;
     border-left: 10px solid #DBC0CF;
     border-bottom: 10px solid #C897B4;
+    padding: 0 0 0 5px;
     font-size: 1.2em;
     display: inline-block; }
+    @media only screen and (min-width: 64em) and (max-width: 90em) {
+      .about__copy {
+        font-size: 1em; } }
     .about__copy--emphasis {
       display: inline-block;
       color: #8C475C;
@@ -306,6 +309,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
+  background-color: black;
   height: 100%;
   width: 90%; }
   .videos__video {
