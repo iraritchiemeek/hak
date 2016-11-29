@@ -23,6 +23,7 @@ hakApp.config(function($routeProvider) {
 });
 
 hakApp.controller('mainController', function($scope, $location) {
+    $scope.video_ids = ['VN4oEB-qtrM', 'b_jx0XvpTVo']
     $scope.gallery = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg']
     $scope.index = 0
 

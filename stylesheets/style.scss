@@ -18,6 +18,9 @@ $pink1:#8C475C;
 $pink2:#C897B4;
 $pink3:#DBC0CF;
 
+$img-path: '../imgs/';
+$home-bg: 'iStock-503303582.jpg';
+
 @mixin respond-to($media) {
   @if $media == handhelds {
     @media only screen and (max-width: $small-breakpoint) { @content; }
@@ -94,6 +97,7 @@ html, body {
 }
 
 header {
+	z-index: 1;
 	top: 0px;
 	left: 100%;
 	width: 50px;
@@ -122,6 +126,11 @@ main {
 	display: none;
 }
 
+.ng-scope {
+	width: 100%;
+	height: 100%;
+}
+
 .inner-container {
 	transition-duration: 1s;
 	@include center;
@@ -138,6 +147,17 @@ main {
 		width: 1440px;
 		height: 720px;
 	}	
+}
+
+.background-image {
+	margin-top: 10px;
+	@include center;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	&--home {
+	}
 }
 
 .color-strip {
@@ -165,7 +185,6 @@ main {
 	height: 100%;
 	width: 100%;
 	margin: 0 0 0 50px;
-
 	&__item {
 		cursor: pointer;
 		height: 100%;
@@ -200,6 +219,7 @@ main {
 		}
 	}
 	&--top-left {
+		cursor: pointer;
 		animation: pulseText 5s ease-in-out 0s infinite alternate-reverse;
 		margin: 10px 0 0 10px;
 		font-size: 3em;
@@ -380,6 +400,25 @@ main {
 		}
 	}
 }
+
+.videos {
+	@include pink-border;
+	@include center;
+	position: relative;
+	height: 100%;
+	width: 90%;
+	&__video {		
+		height: 100%;
+		width: 100%;
+		iframe {
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+
+
 
 
 

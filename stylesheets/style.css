@@ -25,6 +25,7 @@ html, body {
   overflow: hidden; }
 
 header {
+  z-index: 1;
   top: 0px;
   left: 100%;
   width: 50px;
@@ -51,6 +52,10 @@ main {
 .hide {
   display: none; }
 
+.ng-scope {
+  width: 100%;
+  height: 100%; }
+
 .inner-container {
   transition-duration: 1s;
   position: absolute;
@@ -70,6 +75,17 @@ main {
     .inner-container {
       width: 1440px;
       height: 720px; } }
+
+.background-image {
+  margin-top: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .color-strip {
   top: 0;
@@ -119,6 +135,7 @@ main {
     text-align: center;
     font-size: 15em; }
 .title--top-left {
+  cursor: pointer;
   animation: pulseText 5s ease-in-out 0s infinite alternate-reverse;
   margin: 10px 0 0 10px;
   font-size: 3em;
@@ -280,5 +297,22 @@ main {
       display: inline-block;
       color: #8C475C;
       font-size: 1.3em; }
+
+.videos {
+  border-left: 10px solid #DBC0CF;
+  border-bottom: 10px solid #C897B4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  height: 100%;
+  width: 90%; }
+  .videos__video {
+    height: 100%;
+    width: 100%; }
+    .videos__video iframe {
+      height: 100%;
+      width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
