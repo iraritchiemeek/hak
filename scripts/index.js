@@ -8,4 +8,6 @@ $(document).ready(function () {
 		$('.nav-bar__item').removeClass('nav-bar__item--active')
 		$(this).addClass($(this)[0].classList[0] + '--active')
 	})
+
+
 })

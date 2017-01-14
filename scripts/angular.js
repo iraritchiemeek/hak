@@ -47,6 +47,24 @@ hakApp.controller('mainController', function($scope, $location) {
         }
     }
 
+    $scope.displayPlayIcon = function ($event, bool) {
+        if (bool === true) {
+            $($event.target).addClass('music__track-number--play')
+        } else {
+            $($event.target).removeClass('music__track-number--play')
+        }
+    }
 
+    $scope.playTrack = function($event, bool) {
+        if (bool === true) {
+            var audio = new Audio('../public/album/' + $event.target.parentElement.lastElementChild.innerText + '.mp3')
+            console.log(audio)
+            audio.play()
+            // console.log($event.target.parentElement.lastElementChild.innerText)
+        } else {
+            // pause track
+        }
+    }
 
 });
+

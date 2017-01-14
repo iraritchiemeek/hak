@@ -220,7 +220,6 @@ main {
 	}
 	&--top-left {
 		cursor: pointer;
-		animation: pulseText 5s ease-in-out 0s infinite alternate-reverse;
 		margin: 10px 0 0 10px;
 		font-size: 3em;
 		color: #8C475C;
@@ -369,16 +368,25 @@ main {
 		}
 	}
 	&__track-number {
+		// z-index: 1;
 		display: inline-block;
 		clear: both;
 		height: 100%;
 		width: 10%;
 		float: left;
 		span {
+			z-index: -1;
 			@include center-vertical;
 			color: rgba(86%, 75%, 81%, 1);
 			margin: 0 0 0 5px;
 			font-size: 1.4em;
+		}
+		&--play {
+			background-color: #FAFAFA;
+			background-image: url($img-path + 'play-icon.png');
+			background-size: 40%;
+			background-repeat: no-repeat;
+			background-position: left;
 		}
 	}
 }

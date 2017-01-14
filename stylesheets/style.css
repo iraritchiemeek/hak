@@ -136,7 +136,6 @@ main {
     font-size: 15em; }
 .title--top-left {
   cursor: pointer;
-  animation: pulseText 5s ease-in-out 0s infinite alternate-reverse;
   margin: 10px 0 0 10px;
   font-size: 3em;
   color: #8C475C; }
@@ -271,12 +270,19 @@ main {
     width: 10%;
     float: left; }
     .music__track-number span {
+      z-index: -1;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       color: #dbbfcf;
       margin: 0 0 0 5px;
       font-size: 1.4em; }
+    .music__track-number--play {
+      background-color: #FAFAFA;
+      background-image: url("../imgs/play-icon.png");
+      background-size: 40%;
+      background-repeat: no-repeat;
+      background-position: left; }
 
 .about {
   position: absolute;

@@ -10,7 +10,7 @@
 			</div>
 			<div class="music__track-list">
 				<div class="music__track">
-					<div class="music__track-number">
+					<div class="music__track-number" ng-mouseenter="displayPlayIcon($event, true)" ng-mouseleave="displayPlayIcon($event, false)" ng-click="playTrack($event, true)">
 						<span>1</span>
 					</div>
 					<div class="music__track-name">
