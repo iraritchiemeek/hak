@@ -70,7 +70,7 @@ $home-bg: 'iStock-503303582.jpg';
 	transform: translateX(-50%);
 }
 
-@mixin pink-border {
+@mixin pink-border($left, $right) {
 	@include respond-to(handhelds) {
 		border-top: 0;
 		border-left: 0;
@@ -79,10 +79,10 @@ $home-bg: 'iStock-503303582.jpg';
 	}
 
 	border-top: 30px solid rgba(0,0,0,0);
-	border-left: 105px solid black;
-	border-right: 45px solid black;
+	border-left: $left solid $pink1;
+	border-right: $right solid $pink1;
 	border-bottom: 30px solid rgba(0,0,0,0);
-	border-style: double;
+	border-style: inset;
 }
 
 //Copy / Paste for responsive styles
@@ -172,7 +172,7 @@ main {
 	}
 }
 
-.color-strip {
+.strips {
 	top: 0;
 	width: 100%;
 	height: 5px;
@@ -187,15 +187,15 @@ main {
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		height: 45px;
-		&--pink1 {
+		height: 25px;
+		&--strip1 {
 			background-color: rgba(0,0,0,0);
-			background-image: url($img-path + '/squid.gif');
-		}
-		&--pink2 {
 			background-image: url($img-path + '/squid2.gif');
 		}
-		&--pink3 {
+		&--strip2 {
+			background-image: url($img-path + '/squid.gif');
+		}
+		&--strip3 {
 			background-image: url($img-path + '/squid3.gif');
 			background-color: rgba(0,0,0,0);
 		}
@@ -207,7 +207,7 @@ main {
 	width: 100%;
 	margin: 0 0 0 50px;
 	@include respond-to(handhelds) {
-		margin: 25px 0 0 0;
+		margin: 35px 0 0 0;
 		height: 50px;
 	}
 	&__item {
@@ -237,6 +237,9 @@ main {
 
 .title {
 	&--center {
+		@include respond-to(handhelds) {
+			display: none;
+		}
 		@include center;
 		height: 300px;
 		width: 400px;
@@ -273,6 +276,9 @@ main {
 	width: 100%;
 	height: 100%;
 	&__img {
+		-webkit-box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.5);
+		-moz-box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.5);
+		box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.5);
 		// box-sizing: border-box;
 		@include respond-to(handhelds) {
 			min-height: 100px;
@@ -282,37 +288,35 @@ main {
 		}
 		@include respond-to(medium-screens) {
 			padding-bottom: 0%;
-			min-height: 300px;
-			min-width: 300px;
+			min-height: 200px;
+			min-width: 200px;
 			max-height: 500px;
 			max-width: 500px;
 		}
 		@include respond-to(wide-screens) {
-			min-height: 600px;
-			min-width: 600px;
-			max-height: 700px;
-			max-width: 700px;
+			min-height: 400px;
+			min-width: 400px;
+			max-height: 750px;
+			max-width: 750px;
 		}
-		@include pink-border;
+		@include pink-border(105px, 45px);
 		@include center;
 	}
 }
 
 .nav {	
 		position: absolute;
-		margin: 0 20px 0 0;
-		height: 100%;
-		width: 10%;
+		top: 200px;
+		left: 20px;
+		height: 200px;
+		width: 200px;
 		float: left;
 		white-space: nowrap;
 		display: inline-block;
 	&__arrow-wrapper {
-		position: absolute;
-		bottom: 0;
-		height: 10%;
 	}
 	&__arrow {
-		position: absolute;
+		position: relative;
 		// top: 100%;
 		font-family: 'Futura Light';
 		cursor: pointer;
@@ -324,7 +328,7 @@ main {
 		}
 	}
 	&__img-count {
-		height: 10%;
+		display: inline-block;
 		position: relative;
 		width: 100%;
 		span {
@@ -352,16 +356,16 @@ main {
 		margin: 0;
 	}
 	@include respond-to(medium-screens) {
-		width: 960px;
-		height: 470px;
+		width: 320px;
+		height: 430px;
 	}
 	@include respond-to(wide-screens) {
-		width: 1440px;
+		width: 500px;
 		height: 720px;
 	}
 	@include center;
 	border: 1px solid rgba(86%, 75%, 81%, 0.6%);
-	@include pink-border;
+	@include pink-border(45px, 105px);
 	height: 100%;
 	width: 35%;
 	font-family: 'Helvetica Neue';
@@ -473,12 +477,23 @@ main {
 }
 
 .about {
-	@include center-horizontal;
-	width: 55%;
 	height: 100%;
+	width: 100%;
 	&__copy {
-		@include center-vertical;
-		@include pink-border;
+		@include center-horizontal;
+		@include respond-to(handhelds) {
+			margin: 20px 0 0 0;
+			width: 90%;
+		}
+		@include respond-to(medium-screens) {
+			height: 420px;
+			width: 600px;
+		}
+		@include respond-to(wide-screens) {
+			height: 520px;
+			width: 730px;
+		}
+		@include pink-border(50px, 85px);
 		padding: 0 0 0 5px;
 		font-size: 1.2em;
 		display: inline-block;
@@ -494,19 +509,35 @@ main {
 }
 
 .videos {
-	@include pink-border;
-	@include center;
-	position: relative;
-	background-color: black;
+	// position: relative;
 	height: 100%;
-	width: 85%;
-	&__video {		
-		height: 100%;
-		width: 100%;
+	width: 100%;
+	&__video {	
+		@include center;
+		background-color: black;
+		@include respond-to(handhelds) {
+		}
+		@include respond-to(medium-screens) {
+			width: 720px;
+			height: 430px;
+		}
+		@include respond-to(wide-screens) {
+			width: 1080px;
+			height: 600px;
+		}	
 		iframe {
 			height: 100%;
 			width: 100%;
 		}
+		// height: 100%;
+		// width: 100%;
+	}
+	&__nav {
+		margin: 0 0 0 20px;
+		font-size: 2em;
+		text-align: left;
+		width: 150px;
+		height: 150px;
 	}
 }
 
