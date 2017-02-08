@@ -10,7 +10,7 @@
 			</div>
 			<div class="music__track-list">
 				<div class="music__track" ng-repeat="(index, track) in tracks">
-					<div class="music__track-number" ng-mouseenter="displayPlayIcon($event, true)" ng-mouseleave="displayPlayIcon($event, false)" ng-click="playTrack($event)">
+					<div class="music__track-number" ng-mouseenter="displayPlayIcon($event, true)" ng-mouseleave="displayPlayIcon($event, false)" ng-click="audioHandler(index)">
 						<span>{{index + 1}}</span>
 					</div>
 					<div class="music__track-name">
