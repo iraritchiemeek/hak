@@ -407,6 +407,13 @@ main {
 		font-size: 1.2em;
 		color: #8C475C;
 	}
+	&__album-download {
+		font-size: 0.9em;
+		color: $pink3;
+	}
+	a {
+		text-decoration: none;
+	}
 	&__track-list {
 		height: 80%;
 		width: 100%;

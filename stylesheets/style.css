@@ -328,6 +328,11 @@ main {
   .music__album-artist {
     font-size: 1.2em;
     color: #8C475C; }
+  .music__album-download {
+    font-size: 0.9em;
+    color: #DBC0CF; }
+  .music a {
+    text-decoration: none; }
   .music__track-list {
     height: 80%;
     width: 100%;

@@ -58,18 +58,34 @@ hakApp.controller('mainController', function($scope, $location) {
         }
     }
 
-    $scope.setTrack = function ($event) {
-        // get track number
-        // use array of track names to set audio object
-        // check if track is already loaded
+    $scope.displayPauseIcon = function ($event, bool) {
+        if (bool === true) {
+            $($event.target).addClass('music__track-number--pause')
+        } else {
+            $($event.target).removeClass('music__track-number--pause')
+        }
     }
 
+    $scope.clearIcons = function() {
+        $('.music__track-number').removeClass('music__track-number--pause')
+        $('.music__track-number').removeClass('music__track-number--play')
+    }
+
+    // $scope.setTrack = function ($event) {
+    //     // get track number
+    //     // use array of track names to set audio object
+    //     // check if track is already loaded
+    // }
+
     $scope.audioHandler = function(index) {
+        $('.music__track-number').removeClass('music__track-number--pause')
         if (!$scope.current_track) {
             $scope.setTrack(index)
             $scope.togglePlaying(index)
+            $scope.displayPauseIcon($scope.current_track, true)
         } else if ($($scope.current_track)[0].id == index) {
-           $scope.togglePlaying()
+            $scope.displayPlayIcon($scope.current_track, true)
+            $scope.togglePlaying('$scope.current_track', true)
         } else {
             $($scope.current_track).attr('src', '../public/album/' + $scope.tracks[index] + '.mp3')
             $($scope.current_track)[0].load()
@@ -82,19 +98,18 @@ hakApp.controller('mainController', function($scope, $location) {
         $scope.current_track = new Audio('../public/album/' + $scope.tracks[index] + '.mp3')     
         // $($('.music__track-number')[index]).addClass('music__track-number--pause')
         $($scope.current_track).attr('id', index)
-        $('.music__track-number').removeClass('music__track-number--pause')
     }
 
     $scope.togglePlaying = function (index) {
         if ($scope.playing_track) {
             $scope.playing_track = false
             $scope.current_track.pause();
-            $($('.music__track-number')[index]).removeClass('music__track-number--pause')
+            // $($('.music__track-number')[index]).removeClass('music__track-number--pause')
             $($('.music__track-number')[index]).addClass('music__track-number--play')
         } else {
             $scope.playing_track = true
             $scope.current_track.play();
-            $($('.music__track-number')[index]).removeClass('music__track-number--play')
+            // $($('.music__track-number')[index]).removeClass('music__track-number--play')
             $($('.music__track-number')[index]).addClass('music__track-number--pause')
         }
     }
