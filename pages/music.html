@@ -6,14 +6,15 @@
 				<ul class="music__album-info">						
 					<li class="music__album-title">June</li>
 					<li class="music__album-artist">Hak</li>
+					<a href="/public/album/june.zip" download><li class="music__album-download">Download</li></a>
 				</ul>
 			</div>
 			<div class="music__track-list">
 				<div class="music__track" ng-repeat="(index, track) in tracks">
-					<div class="music__track-number" ng-mouseenter="displayPlayIcon($event, true)" ng-mouseleave="displayPlayIcon($event, false)" ng-click="audioHandler(index)">
+					<div id="{{index}}" class="music__track-number" ng-mouseenter="displayPlayIcon(index)" ng-mouseleave="clearIcons()" ng-click="audioHandler(index)">
 						<span>{{index + 1}}</span>
 					</div>
-					<div class="music__track-name">
+					<div class="music__track-name" ng-mouseenter="displayPlayIcon(index)" ng-mouseleave="clearIcons()" ng-click="audioHandler(index)">
 						<span>{{track}}</span>
 					</div>
 				</div>
